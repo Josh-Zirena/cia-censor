@@ -60,10 +60,8 @@ const Home = () => {
   const [userEnteredText, setUserEnteredText] = useState("");
 
   const handleProcess = () => {
-    console.log({ keywords, userEnteredText });
     const trimmedKeywords = keywords?.map((k) => k.trim()).filter((k) => k);
 
-    console.log({ trimmedKeywords });
     if (trimmedKeywords && trimmedKeywords.length >= 1) {
       setIsKeywordError(false);
       const regex = new RegExp(trimmedKeywords?.join("|"), "gi");
@@ -79,7 +77,7 @@ const Home = () => {
     fileReader.readAsText(e.target.files?.[0], "utf-8");
     fileReader.onload = (e) => {
       setOutputText(null);
-      setKeywords("");
+      setUserEnteredText("");
       setInputFileText(e.target.result);
     };
   };
