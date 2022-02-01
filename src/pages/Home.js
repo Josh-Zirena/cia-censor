@@ -111,7 +111,7 @@ const Home = () => {
       <Box sx={{ ...SectionBox }}>
         <TextField
           variant="outlined"
-          label="Enter words or phrases to censor and separate with commas"
+          label="Enter words or phrases(in quotes) to censor them"
           sx={{ ...TextFieldStyle }}
           helperText={isKeywordError ? "Please enter a valid alphabetical word(s) to censor" : ""}
           error={isKeywordError}
